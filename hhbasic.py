@@ -3,4 +3,17 @@
 # Written in Python 2.7
 # A HHBasic implementation for Linux.
 
+import os # To clear screen
+
+def HHBasic():
+  # Initialize
+  os.system('clear') # clear screen
+  print " HHBasic pa1.0"
+  print " Copyright 2014 Aluminium Computing, Inc."
+  
+
+def main(): #for testing
+  HHBasic()
+
+if __name__ == "__main__": main()
 
