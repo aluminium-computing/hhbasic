@@ -10,9 +10,11 @@ def HHBasic():
   os.system('clear') # clear screen
   print " HHBasic pa1.0"
   print " Copyright 2014 Aluminium Computing, Inc."
+  while True:
+    
   
 
-def main(): #for testing
+def main():
   HHBasic()
 
 if __name__ == "__main__": main()
