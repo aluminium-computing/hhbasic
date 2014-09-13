@@ -5,11 +5,14 @@
 
 import os # To clear screen
 
-def HHBasic():
+def HHBasicInit():
   # Initialize
   os.system('clear') # clear screen
   print " HHBasic pa1.0"
   print " Copyright 2014 Aluminium Computing, Inc."
+
+
+def HHBasic():
   interpreter_commands = [
     "HALT",   # exit
     "LIST",   # list program in memory
@@ -33,8 +36,12 @@ def HHBasic():
 
 
 def main():
-  # TODO: Trap for KeyboardInterrupt exception to handle Ctrl-C
-  HHBasic()
+  HHBasicInit()
+  while True:
+    try:
+      HHBasic()
+    except KeyboardInterrupt:
+      print "\nTo halt the interpreter, type HALT."
 
 if __name__ == "__main__": main()
 
