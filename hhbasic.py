@@ -4,6 +4,7 @@
 # A HHBasic implementation for Linux.
 
 import os # To clear screen
+from programclass import Program
 
 def HHBasicInit():
   # Initialize
@@ -21,6 +22,7 @@ def HHBasic():
     "RUN",    # execute the program in memory
     "SAVE",   # save program in memory to disk 
   ]
+  program = Program()
   while True:
     inline = raw_input(">")
     cmd = inline.split(" ")
@@ -33,7 +35,10 @@ def HHBasic():
         print("I don't understand what you're trying to do. That's not a command or a program line.")
         continue
     # At this point we either have a statement with a valid line number or a command to process
-
+    if is_statement:
+      program.addLine(inline)
+    elif cmd[0] == "LIST":
+      program.list()
 
 def main():
   HHBasicInit()

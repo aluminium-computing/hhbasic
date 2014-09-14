@@ -12,3 +12,9 @@ class Program(object):
     key = int(tokenized[0])
     statement = line[len(str(key))+1:]
     self.lines[key] = statement
+
+
+  def list(self):
+    for i in sorted(self.lines.keys()):
+      if self.lines[i]:
+        print "%d %s" % (i, self.lines[i])
