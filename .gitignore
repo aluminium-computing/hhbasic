@@ -1,5 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 # Object files
 *.o
 *.ko
@@ -19,6 +20,8 @@
 # Shared objects (inc. Windows DLLs)
 *.dll
 =======
+=======
+>>>>>>> 372954b... Update .gitignore
 =======
 >>>>>>> 372954b... Update .gitignore
 *.swp # For vi users
