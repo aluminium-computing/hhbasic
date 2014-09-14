@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Object files
 *.o
 *.ko
@@ -16,6 +17,14 @@
 
 # Shared objects (inc. Windows DLLs)
 *.dll
+=======
+*.swp # For vi users
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+
+# C extensions
+>>>>>>> 372954b... Update .gitignore
 *.so
 *.so.*
 *.dylib
