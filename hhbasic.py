@@ -39,6 +39,9 @@ def HHBasic():
       program.addLine(inline)
     elif cmd[0] == "LIST":
       program.list()
+    elif cmd[0] == "NEW":
+      program.new()
+    
 
 def main():
   HHBasicInit()
