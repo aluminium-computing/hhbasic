@@ -18,3 +18,8 @@ class Program(object):
     for i in sorted(self.lines.keys()):
       if self.lines[i]:
         print "%d %s" % (i, self.lines[i])
+  
+  
+  def new(self):
+    self.lines = {}
+  
