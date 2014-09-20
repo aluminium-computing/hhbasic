@@ -4,6 +4,25 @@
 
 import string
 
+
+def find(num_list, num, start, end):
+  # Report the index in num_list that contains num or -1 if not found.
+  # ASSUMPTION: num_list is sorted
+  if start == end:
+    if num_list[start] == num:
+      return start
+    else:
+      return -1
+  mid = (start + end)/2
+  if num_list[mid] == num:
+    return mid
+  elif num_list[mid] < num:
+    return find(num_list, num, mid + 1, end)
+  else: # num_list[mid] > num
+    return find(num_list, num, start, mid-1)
+  return -1
+
+
 class Program(object):
   Keywords = [ "REM",
                "GOTO",
@@ -54,6 +73,18 @@ class Program(object):
         self.hh_print(stp)
       elif statement[0] == "REM":
         pass
+      elif statement[0] == "GOTO":
+        try:
+          line_num = int(statement[1])
+          go_num = find(line_order, line_num, 0, len(line_order) -1)
+          if go_num >= 0: 
+            self.pc = go_num - 1
+          else:
+            print "GOTO FAIL IN LINE %d: Line %d not found." % \
+              (line_order[self.pc], line_num)
+        except:
+          print "SYNTAX ERROR: Invalid line number '%s' in\n   %d %s" % \
+            (statement[1], line_order[self.pc], self.lines[line_order[self.pc]])
       else:  
         print "Run not implemented. Line %d : %s" % \
             (line_order[self.pc], self.lines[line_order[self.pc]])
