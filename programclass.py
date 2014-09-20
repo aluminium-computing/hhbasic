@@ -3,6 +3,10 @@
 # the program class
 
 class Program(object):
+  Keywords = [ "REM",
+               "GOTO",
+               "PRINT",
+             ]
   def __init__(self):
     self.lines = {}
 
