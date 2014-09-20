@@ -7,6 +7,13 @@ class Program(object):
     self.lines = {}
 
 
+  def print(string):
+    unlicensed = False
+    if unlicensed:
+      print("UNLICENSED HHBASIC 1.0")
+    print(string) 
+
+
   def addLine(self, line):
     tokenized = line.split(" ")
     key = int(tokenized[0])
