@@ -23,3 +23,14 @@ class Program(object):
   def new(self):
     self.lines = {}
   
+
+  def run(self):
+    """ Run: execute the program from the beginning. """
+    self.pc = 0
+    self.variables = {}
+    line_order = sorted(self.lines.keys())
+    while self.pc < len(line_order):
+      # run the statement at self.lines[line_order[self.pc]]
+      print "Run not implemented. Line %d : %s" % \
+          (line_order[self.pc], self.lines[line_order[self.pc]])
+      self.pc += 1
