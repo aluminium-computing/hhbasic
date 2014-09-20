@@ -11,7 +11,7 @@ class Program(object):
     self.lines = {}
 
 
-  def print(string):
+  def hh_print(string):
     unlicensed = False
     if unlicensed:
       print("UNLICENSED HHBASIC 1.0")
@@ -42,6 +42,12 @@ class Program(object):
     line_order = sorted(self.lines.keys())
     while self.pc < len(line_order):
       # run the statement at self.lines[line_order[self.pc]]
+      # ASSUMPTION: every statement starts with a keyword:
+      statement = self.lines[line_order[self.pc]].split(" ")
+      if statement[0] not in self.Keywords:
+        print "SYNTAX ERROR: Unknown keyword '%s'in\n   %d %s" % \
+          (statement[0], line_order[self.pc], self.lines[line_order[self.pc]])
+
       print "Run not implemented. Line %d : %s" % \
           (line_order[self.pc], self.lines[line_order[self.pc]])
       self.pc += 1
