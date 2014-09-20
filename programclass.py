@@ -2,6 +2,8 @@
 
 # the program class
 
+import string
+
 class Program(object):
   Keywords = [ "REM",
                "GOTO",
@@ -11,7 +13,7 @@ class Program(object):
     self.lines = {}
 
 
-  def hh_print(string):
+  def hh_print(self, string):
     unlicensed = False
     if unlicensed:
       print("UNLICENSED HHBASIC 1.0")
@@ -47,7 +49,12 @@ class Program(object):
       if statement[0] not in self.Keywords:
         print "SYNTAX ERROR: Unknown keyword '%s'in\n   %d %s" % \
           (statement[0], line_order[self.pc], self.lines[line_order[self.pc]])
-
-      print "Run not implemented. Line %d : %s" % \
-          (line_order[self.pc], self.lines[line_order[self.pc]])
+      elif statement[0] == "PRINT":
+        stp = (string.join(statement[1:], " ")).strip('"')
+        self.hh_print(stp)
+      elif statement[0] == "REM":
+        pass
+      else:  
+        print "Run not implemented. Line %d : %s" % \
+            (line_order[self.pc], self.lines[line_order[self.pc]])
       self.pc += 1
