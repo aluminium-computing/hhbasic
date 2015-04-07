@@ -4,6 +4,7 @@
 
 import string
 
+lictimes = 0
 
 def find(num_list, num, start, end):
   # Report the index in num_list that contains num or -1 if not found.
@@ -33,9 +34,9 @@ class Program(object):
 
 
   def hh_print(self, string):
-    unlicensed = False
-    if unlicensed:
-      print("UNLICENSED HHBASIC 1.0")
+    unlicenced = False
+    if unlicenced and (lictimes % 10 == 0):
+      print("Your copy of HHBasic(TM) is unlicenced!\nPlease obtain a licence from Aluminium Computing, Inc.\n)
     print(string) 
 
 
@@ -79,13 +80,10 @@ class Program(object):
           go_num = find(line_order, line_num, 0, len(line_order) -1)
           if go_num >= 0: 
             self.pc = go_num - 1
-          else:
-            print "GOTO FAIL IN LINE %d: Line %d not found." % \
+          else: # WE NEVER GET HERE!!!!!
+            print "SYNTAX ERROR IN LINE %d: NO SUCH LINE %d." % \
               (line_order[self.pc], line_num)
         except:
           print "SYNTAX ERROR: Invalid line number '%s' in\n   %d %s" % \
-            (statement[1], line_order[self.pc], self.lines[line_order[self.pc]])
-      else:  
-        print "Run not implemented. Line %d : %s" % \
-            (line_order[self.pc], self.lines[line_order[self.pc]])
+            (statement[1], line_order[self.pc], self.lines[line_order[self.pc]]S
       self.pc += 1
