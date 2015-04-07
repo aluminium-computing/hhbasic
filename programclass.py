@@ -36,7 +36,7 @@ class Program(object):
   def hh_print(self, string):
     unlicenced = False
     if unlicenced and (lictimes % 10 == 0):
-      print("Your copy of HHBasic(TM) is unlicenced!\nPlease obtain a licence from Aluminium Computing, Inc.\n)
+      print("Your copy of HHBasic(TM) is unlicenced!\nPlease obtain a licence from Aluminium Computing, Inc.")
     print(string) 
 
 
