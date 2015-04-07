@@ -9,8 +9,8 @@ from programclass import Program
 def HHBasicInit():
   # Initialize
   os.system('clear') # clear screen
-  print " HHBasic pa1.0"
-  print " Copyright 2014 Aluminium Computing, Inc."
+  print " HHBasic(TM) v0.1 Pre-Alpha"
+  print " Copyright (c) 2014 Aluminium Computing, Inc."
 
 
 def HHBasic():
@@ -32,7 +32,8 @@ def HHBasic():
       is_statement = int(cmd[0])
     except ValueError:
       if cmd[0] not in interpreter_commands:
-        print("I don't understand what you're trying to do. That's not a command or a program line.")
+        # Sound error noise here
+        print("SYNTAX ERROR: INVALID COMMAND")
         continue
     # At this point we either have a statement with a valid line number or a command to process
     if is_statement:
