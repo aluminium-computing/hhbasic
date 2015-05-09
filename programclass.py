@@ -34,18 +34,24 @@ class Program(object):
 
 
   def hh_print(self, string):
+    """ Licensing:
     unlicenced = False
     if unlicenced:
-      print("Your copy of HHBasic(TM) is unlicenced!\nPlease obtain a licence from Aluminium Computing, Inc.")
+      print("Your copy of HHBasic(TM) is unlicenced!\nPlease obtain a licence from Aluminium Computing, Inc.") """
     print(string) 
 
 
   def addLine(self, line):
-    tokenized = line.split(" ")
-    key = int(tokenized[0])
+    tokenised = line.split(" ")
+    key = int(tokenised[0])
     statement = line[len(str(key))+1:]
     self.lines[key] = statement
-
+  
+  def load(self, name):
+    programFile = open(name, 'r')
+    lines = programFile.readlines()
+    for each in lines:
+      self.addLine(each.strip())
 
   def list(self):
     for i in sorted(self.lines.keys()):

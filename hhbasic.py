@@ -44,6 +44,8 @@ def HHBasic():
       program.new()
     elif cmd[0] == "RUN":
       program.run()
+    elif cmd[0] == "LOAD":
+      program.load(cmd[1])
     
 
 def main():
