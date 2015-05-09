@@ -85,5 +85,5 @@ class Program(object):
               (line_order[self.pc], line_num)
         except:
           print "SYNTAX ERROR: Invalid line number '%s' in\n   %d %s" % \
-            (statement[1], line_order[self.pc], self.lines[line_order[self.pc]]S
+            (statement[1], line_order[self.pc], self.lines[line_order[self.pc]]
       self.pc += 1
