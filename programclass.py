@@ -35,7 +35,7 @@ class Program(object):
 
   def hh_print(self, string):
     unlicenced = False
-    if unlicenced and (lictimes % 10 == 0):
+    if unlicenced:
       print("Your copy of HHBasic(TM) is unlicenced!\nPlease obtain a licence from Aluminium Computing, Inc.")
     print(string) 
 
@@ -67,7 +67,7 @@ class Program(object):
       # ASSUMPTION: every statement starts with a keyword:
       statement = self.lines[line_order[self.pc]].split(" ")
       if statement[0] not in self.Keywords:
-        print "SYNTAX ERROR: Unknown keyword '%s'in\n   %d %s" % \
+        print "SYNTAX ERROR: Unknown keyword '%s' in\n   %d %s" % \
           (statement[0], line_order[self.pc], self.lines[line_order[self.pc]])
       elif statement[0] == "PRINT":
         stp = (string.join(statement[1:], " ")).strip('"')
@@ -85,5 +85,5 @@ class Program(object):
               (line_order[self.pc], line_num)
         except:
           print "SYNTAX ERROR: Invalid line number '%s' in\n   %d %s" % \
-            (statement[1], line_order[self.pc], self.lines[line_order[self.pc]]
+            (statement[1], line_order[self.pc], self.lines[line_order[self.pc]])
       self.pc += 1

@@ -10,7 +10,7 @@ def HHBasicInit():
   # Initialize
   os.system('clear') # clear screen
   print " HHBasic(TM) v0.1 Pre-Alpha"
-  print " Copyright (c) 2014 Aluminium Computing, Inc."
+  print " Copyright (c) 2014-15 Aluminium Computing, Inc."
 
 
 def HHBasic():
