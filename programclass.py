@@ -28,6 +28,8 @@ class Program(object):
   Keywords = [ "REM",
                "GOTO",
                "PRINT",
+               "#",
+               "INFO",
              ]
   def __init__(self):
     self.lines = {}
@@ -52,16 +54,25 @@ class Program(object):
     lines = programFile.readlines()
     for each in lines:
       self.addLine(each.strip())
+    programFile.close()
 
   def list(self):
     for i in sorted(self.lines.keys()):
       if self.lines[i]:
         print "%d %s" % (i, self.lines[i])
-  
+
+  def save(self, name):
+    programFile = open(name, 'w+')
+    for i in sorted(self.lines.keys()):
+      if self.lines[i]:
+        programFile.write("%d %s" % (i, self.lines[i]))
+    programFile.close()  
   
   def new(self):
     self.lines = {}
-  
+ 
+  def info(self):
+    print "INFO under construction" 
 
   def run(self):
     """ Run: execute the program from the beginning. """
@@ -78,7 +89,7 @@ class Program(object):
       elif statement[0] == "PRINT":
         stp = (string.join(statement[1:], " ")).strip('"')
         self.hh_print(stp)
-      elif statement[0] == "REM":
+      elif statement[0] == "REM" or statement[0] == "#":
         pass
       elif statement[0] == "GOTO":
         try:

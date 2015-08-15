@@ -6,6 +6,7 @@
 import os # To clear screen
 from programclass import Program
 
+
 def HHBasicInit():
   # Initialize
   os.system('clear') # clear screen
@@ -13,18 +14,19 @@ def HHBasicInit():
   print " Copyright (c) 2014-15 Aluminium Computing, Inc."
 
 
-def HHBasic():
+def HHBasic(program):
   interpreter_commands = [
     "HALT",   # exit
     "LIST",   # list program in memory
     "LOAD",   # load a program from disk
     "NEW",    # clear memory
     "RUN",    # execute the program in memory
-    "SAVE",   # save program in memory to disk 
+    "SAVE",   # save program in memory to disk
+    "INFO",   #  
   ]
-  program = Program()
   while True:
     inline = raw_input(">")
+
     cmd = inline.split(" ")
     is_statement = False
     if cmd[0] == "HALT": exit()
@@ -46,13 +48,17 @@ def HHBasic():
       program.run()
     elif cmd[0] == "LOAD":
       program.load(cmd[1])
-    
+    elif cmd[0] == "SAVE":
+      program.save(cmd[1])    
+    elif cmd[0] == "INFO":
+      program.info()
 
 def main():
   HHBasicInit()
+  program = Program()
   while True:
     try:
-      HHBasic()
+      HHBasic(program)
     except KeyboardInterrupt:
       print "\nTo halt the interpreter, type HALT."
 
